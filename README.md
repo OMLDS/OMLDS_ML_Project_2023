@@ -8,7 +8,7 @@ Expose and challenge OMLDS members to develop and end-to-end machine learning pr
 
 ### Business problem
 
-A regional bank has awarded your organization to develop a business solution to proactively detect credit card fraudulent transactions and achieve a 15% reduction in costs related to insurance and customer dissatisfaction.
+A regional bank has awarded your organization to develop a business solution to proactively detect credit card fraudulent transactions and achieve, at least, **15%** reduction in costs related to insurance and customer dissatisfaction.
 
 ### Dataset
 
