@@ -18,6 +18,8 @@ Dataset link: https://www.kaggle.com/datasets/kartik2112/fraud-detection
 
 ### Resources
 
+The Cost of Credit Card Fraud https://www.tokenex.com/blog/vh-the-cost-of-credit-card-fraud/
+
 Python for Data Analysis, 2nd edition https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython-ebook/dp/B075X4LT6K
 
 Data Science for Business, 1st edition https://a.co/d/50yScI0
