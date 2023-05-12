@@ -36,6 +36,8 @@ with fellow OMLDS members.
   * [Colab](https://colab.research.google.com/) 
   * [Kaggle](https://www.kaggle.com/account/login)
 
+Once you have a github account, fork this repository to your account.
+
 * Some articles to familiarize yourself with using Colab with GitHub and Conda
   * [Clone a GitHub Repo to Colab](https://www.geeksforgeeks.org/how-to-clone-github-repository-and-push-changes-in-colaboratory/)
   * [Instal Conda in Colab](https://inside-machinelearning.com/en/how-to-install-use-conda-on-google-colab/)
