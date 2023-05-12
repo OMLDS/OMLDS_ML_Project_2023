@@ -25,3 +25,15 @@ Python for Data Analysis, 2nd edition https://www.amazon.com/Python-Data-Analysi
 Data Science for Business, 1st edition https://a.co/d/50yScI0
 
 Exploratory Data Analysis for Feature Selection in Machine Learning https://shorturl.at/aouO5
+
+# Getting Started
+Be a hands on participant in the project to learn new skills and collaborate 
+with fellow OMLDS members.  
+## You need the following for hands on participation:
+* GitHub account ([signup](https://github.com/signup) for free account if you don't have one)
+* Google and related Google services
+  * [Google](https://accounts.google.com/signup)
+  * [Colab](https://colab.research.google.com/) 
+  * [Kaggle](https://www.kaggle.com/account/login)
+
+
