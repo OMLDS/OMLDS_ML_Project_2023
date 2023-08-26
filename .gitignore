@@ -3,6 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Data files
+.idea/*
+.DS_Store
+.RData
+.Rhistory
+*.csv
+*.xls
+*.xlsx
+
 # C extensions
 *.so
 
@@ -131,11 +140,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Data files
-.idea/*
-.DS_Store
-.RData
-.Rhistory
 
-# .yml files
-ef_ccdt.yml

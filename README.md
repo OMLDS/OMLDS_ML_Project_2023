@@ -4,7 +4,7 @@ Welcome to the 2023 OMLDS End-to-End Machine Learning Challenge Project.
 
 ### Objective
 
-Expose and challenge OMLDS members to develop and end-to-end machine learning project from business insights to model deployment.
+Expose and challenge OMLDS members to develop an end-to-end machine learning project from business insights to model deployment.
 
 ### Business problem
 
@@ -41,3 +41,47 @@ Once you have a github account, fork this repository to your account.
 * Some articles to familiarize yourself with using Colab with GitHub and Conda
   * [Clone a GitHub Repo to Colab](https://www.geeksforgeeks.org/how-to-clone-github-repository-and-push-changes-in-colaboratory/)
   * [Instal Conda in Colab](https://inside-machinelearning.com/en/how-to-install-use-conda-on-google-colab/)
+
+
+## Folder structure
+The data folder can also be organized into subfolders when it makes sense for 
+the project.  
+
+An example is when the data folder will contain both input and output data.  
+Then, it may be useful to have subfolders like the following structure.  Name 
+the subfolders as appropriate for your project.
+
+```
+omlds_ml_project_2023  <- project's root folder/directory
+├── README.md          <- the top-level README for this project.
+├── LICENSE            <- license associate with this project
+├── .gitignore         <- defines any files which should not be tracked in the 
+│                         git repository.
+│
+├── data               <- project data files 
+|   ├── readme.md      <- readme specific to this folder
+|   ├── <other>        <- subfolders as needed
+│
+├── docs               <- manuals and/or reference info for project 
+|   ├── readme.md      <- readme specific to this folder 
+|   ├── <other>        <- subfolders as needed
+│
+├── notebooks          <- interactive python files for rapid dev idead testing
+|   ├── readme.md      <- readme specific to this folder
+|   ├── <other>        <- subfolders as needed
+│
+├── src                <- source code 
+|   ├── readme.md      <- readme specific to this folder 
+|   ├── data_handling  <- scripts to ingest, write or transform data 
+|   ├── features       <- scripts to defining ML model features (factors)
+|   ├── models         <- scripts to train and use trained ML models
+│
+│   Note: typically use one of the following requirements files not both.  We 
+|         include both for understanding/learning the process.
+├── requirements.txt   <- file to reproducing the virtual environment with pip
+│                         generated with `pip list --format=freeze > requirements.txt`
+├── requirements.yml   <- file to reproducing the virtual environment with conda
+│                         generated with `conda env export > requirements.yml`
+│                         
+
+```
