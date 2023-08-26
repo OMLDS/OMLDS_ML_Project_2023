@@ -44,12 +44,10 @@ Once you have a github account, fork this repository to your account.
 
 
 ## Folder structure
-The data folder can also be organized into subfolders when it makes sense for 
-the project.  
+The project folder structure is setup to organize code for development and 
+deployment.  The folder structure is a subjective choice of how to organize the 
+code and should be altered to fit the needs of the project and team members.
 
-An example is when the data folder will contain both input and output data.  
-Then, it may be useful to have subfolders like the following structure.  Name 
-the subfolders as appropriate for your project.
 
 ```
 omlds_ml_project_2023  <- project's root folder/directory
