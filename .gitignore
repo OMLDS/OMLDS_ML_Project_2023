@@ -9,6 +9,7 @@ __pycache__/
 .RData
 .Rhistory
 *.csv
+*.pkl
 *.xls
 *.xlsx
 
