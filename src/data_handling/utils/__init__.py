@@ -6,7 +6,9 @@ from .read_data import (
 )
 
 from .transform_data import (
-    feature_eng
+    feature_eng, 
+    calc_distance, 
+    create_distance_feature
 )
 
 from .plot_stats import (
