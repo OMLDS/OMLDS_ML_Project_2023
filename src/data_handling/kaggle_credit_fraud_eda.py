@@ -140,6 +140,11 @@ from utils import feature_eng
 
 df_sample = feature_eng(df_sample)
 
+# create feature distance
+from utils import calc_distance, create_distance_feature
+
+df_sample = create_distance_feature(df_sample)
+
 df_sample.info()
 
 df_sample.nunique()
@@ -200,6 +205,10 @@ sns.boxplot(x = 'age', data = df_sample)
 # is `age` a significant factor for `is_fraud`
 sns.boxplot(x = 'is_fraud', y = 'age', data = df_sample)
 Bivariate_cont_cat(df_sample, 'age', 'is_fraud', 1)
+
+# is `distance_home_buyer_city_state` a significant factor for `is_fraud`
+sns.boxplot(x = 'is_fraud', y = 'distance_home_buyer_city_state', data = df_sample)
+Bivariate_cont_cat(df_sample, 'distance_home_buyer_city_state', 'is_fraud', 1)
 
 # Bivariate Analysis (Categorical - Categorical)
 from utils import BVA_categorical_plot, stacked_bar_chart_with_ttest, px_stacked_bar_chart_with_ttest
