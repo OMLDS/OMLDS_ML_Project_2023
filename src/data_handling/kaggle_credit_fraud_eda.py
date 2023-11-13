@@ -155,7 +155,7 @@ cols_unique_less_15
 
 # using seaborn
 # sns.color_palette('colorblind')
-f, axes = plt.subplots(4, 2, figsize=(15, 25), sharex=False)
+f, axes = plt.subplots(6, 2, figsize=(15, 25), sharex=False)
 for ax, feature in zip(axes.flat, df_sample[cols_unique_less_15]):
     sns.countplot(df_sample[feature], 
                   order =  df_sample[feature].value_counts().index, 
@@ -189,7 +189,7 @@ plt.yscale('log')
 from utils import Bivariate_cont_cat
 
 # is log(`city_pop`) a significant factor for `is_fraud`
-df_sample['log_city_pop'] = np.log1p(df_sample['city_pop'])
+# df_sample['log_city_pop'] = np.log1p(df_sample['city_pop'])
 sns.boxplot(x = 'is_fraud', y = 'log_city_pop', data=df_sample)
 Bivariate_cont_cat(df_sample, 'log_city_pop', 'is_fraud', 1)
 
@@ -262,9 +262,9 @@ px_stacked_bar_chart_with_ttest(df_sample, 'is_fraud', 'shop_net')
 BVA_categorical_plot(df_sample, 'is_fraud', 'shop_net')
 
 # correlation heatmap (Pearson)
-df_sample['trans_hour'] = df_sample['trans_hour'].astype(int)
-df_sample['age_bin_cat'] = df_sample['age_bin'].astype('category')
-df_sample['age_bin_cat'] = df_sample['age_bin_cat'].cat.codes
+# df_sample['trans_hour'] = df_sample['trans_hour'].astype(int)
+# df_sample['age_bin_cat'] = df_sample['age_bin'].astype('category')
+# df_sample['age_bin_cat'] = df_sample['age_bin_cat'].cat.codes
 
 # correlation heatmap (Pearson)
 sns.heatmap(df_sample.corr(), vmin = -1, vmax = 1, annot = True, cmap = 'BrBG')
@@ -296,7 +296,7 @@ plt.yscale('log')
 plt.xticks(rotation=45)
 
 # `amt` data biinning by quartiles
-df_sample['amt_bin'] = pd.qcut(df_sample['amt'], q=4)
+# df_sample['amt_bin'] = pd.qcut(df_sample['amt'], q=4)
 df_sample.groupby('amt_bin')['is_fraud'] \
      .value_counts(normalize=True) \
      .unstack() \
@@ -305,11 +305,11 @@ df_sample.groupby('amt_bin')['is_fraud'] \
 BVA_categorical_plot(df_sample, 'is_fraud', 'amt_bin')
 
 # convert `amt_bin` to ordinal category
-df_sample['amt_bin_cat'] = df_sample['amt_bin'].astype('category')
-df_sample['amt_bin_cat'] = df_sample['amt_bin_cat'].cat.codes
+# df_sample['amt_bin_cat'] = df_sample['amt_bin'].astype('category')
+# df_sample['amt_bin_cat'] = df_sample['amt_bin_cat'].cat.codes
 
 # save df_sample as csv
-# df_sample.to_csv('./credit_card_fraud_sample.csv', index = False)
+# df_sample.to_csv('../../data/credit_card_fraud_sample.csv', index = False)
 
 # save df_sample to pickle
 # df_sample.to_pickle('../../data/credit_card_fraud_sample.pkl')
