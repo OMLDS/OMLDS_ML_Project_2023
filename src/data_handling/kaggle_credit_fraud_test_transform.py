@@ -61,28 +61,28 @@ test.info()
 test.nunique()
 
 # additional features
-test['log_city_pop'] = np.log1p(test['city_pop'])
+# test['log_city_pop'] = np.log1p(test['city_pop'])
 
 # `age_bin`
-cut_bins = [12, 30, 46, 62, 79, 100]
-test['age_bin'] = pd.cut(test['age'], 
-                              bins=cut_bins, 
-                              labels=['12-30', '31-46', '47-62', '63-79', '80+'])
+# cut_bins = [12, 30, 46, 62, 79, 100]
+# test['age_bin'] = pd.cut(test['age'], 
+#                               bins=cut_bins, 
+#                               labels=['12-30', '31-46', '47-62', '63-79', '80+'])
 
 # correlation heatmap (Pearson)
-test['trans_hour'] = test['trans_hour'].astype(int)
-test['age_bin_cat'] = test['age_bin'].astype('category')
-test['age_bin_cat'] = test['age_bin_cat'].cat.codes
+# test['trans_hour'] = test['trans_hour'].astype(int)
+# test['age_bin_cat'] = test['age_bin'].astype('category')
+# test['age_bin_cat'] = test['age_bin_cat'].cat.codes
 
 # correlation heatmap (Pearson)
 sns.heatmap(test.corr(), vmin = -1, vmax = 1, annot = True, cmap = 'BrBG')
 
 # `amt` data biinning by quartiles
-test['amt_bin'] = pd.qcut(test['amt'], q=4)
+# test['amt_bin'] = pd.qcut(test['amt'], q=4)
 
 # convert `amt_bin` to ordinal category
-test['amt_bin_cat'] = test['amt_bin'].astype('category')
-test['amt_bin_cat'] = test['amt_bin_cat'].cat.codes
+# test['amt_bin_cat'] = test['amt_bin'].astype('category')
+# test['amt_bin_cat'] = test['amt_bin_cat'].cat.codes
 
 # save test to pickle
 test.to_pickle('../../data/credit_card_fraud_test.pkl')
