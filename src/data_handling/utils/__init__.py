@@ -8,7 +8,9 @@ from .read_data import (
 from .transform_data import (
     feature_eng, 
     calc_distance, 
-    create_distance_feature
+    create_distance_feature, 
+    woe_category_encoding, 
+    feature_selection_prep
 )
 
 from .plot_stats import (
