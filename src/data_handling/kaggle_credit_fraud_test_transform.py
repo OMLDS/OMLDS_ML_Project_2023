@@ -13,6 +13,8 @@ from pprint import pprint as pp
 import warnings
 warnings.filterwarnings('ignore')
 
+plt.rcParams['figure.figsize'] = (20, 16)
+
 # Read and transform test dataset
 
 from utils import read_dataset

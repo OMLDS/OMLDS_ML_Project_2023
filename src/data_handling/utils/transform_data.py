@@ -46,11 +46,18 @@ def feature_eng(data):
     data['age_bin_cat'] = data['age_bin_cat'].cat.codes
 
     # `amt` data biinning by quartiles
-    data['amt_bin'] = pd.qcut(data['amt'], q=4)
+    amt_cut_bins = [0, 9.64, 47.5, 83.06, 30000]
+    data['amt_bin'] = pd.cut(data['amt'], 
+                             bins = amt_cut_bins, 
+                             labels = ['0 - 9.64', 
+                                       '9.65 - 47.50', 
+                                       '47.51 - 83.06', 
+                                       '83.07 - 30,000']
+                        )
 
     # convert `amt_bin` to ordinal category
-    data['amt_bin_cat'] = data['amt_bin'].astype('category')
-    data['amt_bin_cat'] = data['amt_bin_cat'].cat.codes
+    # data['amt_bin_cat'] = data['amt_bin'].astype('category')
+    # data['amt_bin_cat'] = data['amt_bin_cat'].cat.codes
 
     return data
 
@@ -129,18 +136,20 @@ def category_merge(data, column, threshold_percent):
 
     return data
 
-def feature_selection_prep(data, one_hot = False):
+def feature_selection_prep(data, one_hot = False, drop_first = False):
     """
     Function to prep dataset for feature selection methods
 
     Args:
         data (dataframe): Pandas dataframe
         one_hot (bool, optional): Activate one-hot encoding preprocess. Defaults to False.
+        drop_first (bool, optional): Activate drop_first argument to drop first column in one-hot encoding. 
+        Defaults to False.
     """
 
     # drop selected columns
     cols_drop = ['trans_date_trans_time', 'merchant', 'dob', 'trans_num', 'unix_time', 
-                 'trans_date', 'age_bin', 'amt_bin']
+                 'trans_date', 'age_bin', 'state']
     data = data.drop(columns = cols_drop, axis = 1)
 
     # merge less frequent categories in 'city_state', 'city', 'zip', 'job', and 'cc_num'
@@ -170,7 +179,8 @@ def feature_selection_prep(data, one_hot = False):
 
     if one_hot:
 
-        data = pd.get_dummies(data, columns=['category', 'state'])
+        data = pd.get_dummies(data, columns=['category', 'amt_bin'], 
+                              drop_first = drop_first)
     
     return data
 
@@ -181,8 +191,8 @@ def woe_category_encoding(train_data, test_data):
     train_cols_cat = train_data.select_dtypes(include = 'object').columns.to_list()
     test_cols_cat = test_data.select_dtypes(include = 'object').columns.to_list()
 
-    # drop 'category' and 'state' from cols_cat
-    remove_cat = {'category', 'state'}
+    # drop 'category', 'state' and 'amt_bin' from cols_cat
+    remove_cat = {'category', 'amt_bin'}
     train_cols_cat = [item for item in train_cols_cat if item not in remove_cat]
     test_cols_cat = [item for item in test_cols_cat if item not in remove_cat]
 

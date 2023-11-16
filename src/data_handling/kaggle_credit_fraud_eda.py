@@ -77,7 +77,7 @@ df_raw['is_fraud'].value_counts(normalize=True)
 
 from utils import sample_strata_df
 
-df_sample = sample_strata_df(df_raw, frac = 0.3)
+df_sample = sample_strata_df(df_raw, frac = 0.5)
 df_sample
 
 df_sample['is_fraud'].value_counts(normalize=True)
@@ -228,10 +228,10 @@ px_stacked_bar_chart_with_ttest(df_sample, 'is_fraud', 'category')
 BVA_categorical_plot(df_sample, 'is_fraud', 'category')
 
 # `age_bin`
-cut_bins = [12, 30, 46, 62, 79, 100]
-df_sample['age_bin'] = pd.cut(df_sample['age'], 
-                              bins=cut_bins, 
-                              labels=['12-30', '31-46', '47-62', '63-79', '80+'])
+# cut_bins = [12, 30, 46, 62, 79, 100]
+# df_sample['age_bin'] = pd.cut(df_sample['age'], 
+#                               bins=cut_bins, 
+#                               labels=['12-30', '31-46', '47-62', '63-79', '80+'])
 
 BVA_categorical_plot(df_sample, 'is_fraud', 'age_bin')
 
